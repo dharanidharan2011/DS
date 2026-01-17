@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout - MyShop{% endblock %}
+
+{% block content %}
+<div class="checkout-container">
+    <h2>Checkout</h2>
+    {% if cart %}
+    <form method="POST" action="/checkout">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required>
+
+        <p>Total Amount: ₹{{ total }}</p>
+
+        <button type="submit">Place Order</button>
+    </form>
+    {% else %}
+    <p>Your cart is empty. <a href="/products">Shop Now</a></p>
+    {% endif %}
+</div>
+{% endblock %}
