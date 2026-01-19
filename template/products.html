@@ -4,6 +4,7 @@
 
 {% block content %}
 <h1 class="page-title">All Products</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
 <div class="products-container">
     {% for product in products %}
@@ -14,5 +15,7 @@
         <button>Add to Cart</button>
     </div>
     {% endfor %}
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 </div>
 {% endblock %}
