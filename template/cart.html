@@ -4,6 +4,8 @@
 
 {% block content %}
 <h1 class="page-title">Your Cart</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 
 {% if cart %}
 <table class="cart-table">
@@ -29,5 +31,7 @@
 {% else %}
 <p>Your cart is empty.</p>
 <a href="/products">Shop Now</a>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 {% endif %}
 {% endblock %}
